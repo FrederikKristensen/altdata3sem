@@ -1,21 +1,28 @@
+// import axios, {
+//     AxiosResponse, 
+//     AxiosError
+//  } from ""
+
+interface Irasp {
+    id: number
+    kunid: number
+    place: number
+    temper: number
+
+}
+
+// let baseurl: string = "" 
+
 new Vue({
-    // TypeScript compiler complains about Vue because the CDN link to Vue is in the html file.
-    // Before the application runs this TypeScript file will be compiled into bundle.js
-    // which is included at the bottom of the html file.
     el: "#app",
     data: {
-        name: "",
-        greeting: ""
-    },
+        rasps: [],
+        
+        },
     methods: {
-        sayHello() {
-            console.log("Say Hello " + this.name)
-            if (this.name == "") {
-                this.greeting = "Hello NoName"
-            }
-            else {
-                this.greeting = "Hello " + this.name
-            }
+        getallrasps() {
+            console.log("geted all")
+            this.helperGetAndShow(baseurl)
         }
     }
 })
