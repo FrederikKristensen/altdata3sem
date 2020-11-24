@@ -16,17 +16,30 @@
 </head>
 
 <body>
-  <h1>Hello</h1>
   <div id="app">
-    <input v-model="name" placeholder="Name">
-    <button v-on:click="sayHello()" class="btn btn-primary">Say hello</button>
-    <div>{{ greeting }}</div>
+    <h2>Get all</h2>
+    <button id="getAllButton" v-on:click="getallrasps" 
+    class="btn btn-primary">Get all</button>
+    <br>
+    <br>
+    <br>
+    <h2>List of bitches</h2>
+      <ul id="rasplist" v-if="rasps.length">
+        <li v-for="plant in plants">
+          {{plants.planteId}} 
+          {{plante.planteId}} 
+          {{plant.planteId}} 
+          {{Plant.planteId}} 
+          {{Plante.planteId}}
+          {{Plants.planteId}} 
+        </li>
+      </ul>
+      <div v-else>No data</div>
+
     <br>
     <br>
     <br>
     <a href="test_file.zip" download>Her</a>
-    <a download="test_file.txt">Download</a>
-    <a href="test_file.zip" download="">Download File</a>
   </div>
 
   <script src="bundle.js"></script>
