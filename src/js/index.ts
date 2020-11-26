@@ -4,8 +4,8 @@ import axios, {
 } from "../../node_modules/axios/index"
 
 interface Irasp {
-    maskineId: number
-    maskineName: string    
+    machineId: number
+    machineName: string    
     temperature: number
     location: number
     date: number
@@ -13,13 +13,7 @@ interface Irasp {
 
 }
 
-// interface Iplant {
-//     planteId: number
-//     plantetype: string
-//     planteNavn: string
-//     maksHoejde: number
-//     prist: number
-// }
+
 
 
 let baseurl: string = "http://coronatest.azurewebsites.net/api/CoronaTests" 
@@ -37,7 +31,8 @@ new Vue({
             axios.get<Irasp[]>(url)
                 .then((response: AxiosResponse<Irasp[]>) => {
                     console.log(response.data)
-                    this.plants = response.data
+                    this.rasps = response.data
+                    console.log(this.rasps)
                 })
                 .catch((error: AxiosError) => {
                     alert(error.message) 
