@@ -3,39 +3,39 @@ import axios, {
     AxiosError
 } from "../../node_modules/axios/index"
 
-// interface Irasp {
-//     maskineId: number    
-//     temperatur: number
-//     lokation: number
-//     dato: number
-//     tid: number
+interface Irasp {
+    maskineId: number
+    maskineName: string    
+    temperature: number
+    location: number
+    date: number
+    time: number
 
-// }
-
-interface Iplant {
-    planteId: number
-    plantetype: string
-    planteNavn: string
-    maksHoejde: number
-    prist: number
 }
 
+// interface Iplant {
+//     planteId: number
+//     plantetype: string
+//     planteNavn: string
+//     maksHoejde: number
+//     prist: number
+// }
 
-let baseurl: string = "https://corstes.azurewebsites.net/api/Plante" 
+
+let baseurl: string = "http://coronatest.azurewebsites.net/api/CoronaTests" 
 
 new Vue({
     el: "#app",
     data: {
         rasps: [],
-        plants: []
         },
     methods: {
         getallrasps() {
             this.helperGetAndShow(baseurl)
         },
         helperGetAndShow(url: string) { 
-            axios.get<Iplant[]>(url)
-                .then((response: AxiosResponse<Iplant[]>) => {
+            axios.get<Irasp[]>(url)
+                .then((response: AxiosResponse<Irasp[]>) => {
                     this.plants = response.data
                 })
                 .catch((error: AxiosError) => {
