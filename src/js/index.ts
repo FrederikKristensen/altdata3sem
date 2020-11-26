@@ -36,6 +36,7 @@ new Vue({
         helperGetAndShow(url: string) { 
             axios.get<Irasp[]>(url)
                 .then((response: AxiosResponse<Irasp[]>) => {
+                    console.log(response.data)
                     this.plants = response.data
                 })
                 .catch((error: AxiosError) => {
